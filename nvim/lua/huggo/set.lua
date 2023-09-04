@@ -30,3 +30,10 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "80"
+
+vim.opt.cursorline = true
+
+-- open a terminal with lazygit
+vim.cmd("command! LazyGit :terminal lazygit")
+vim.api.nvim_set_keymap("n", "<leader>gg", ":LazyGit<CR>", { noremap = true, silent = true })
+

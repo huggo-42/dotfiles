@@ -69,6 +69,13 @@ return require('packer').startup(function(use)
         }
     }
 
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
     use("folke/zen-mode.nvim")
     use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")
