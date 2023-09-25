@@ -214,6 +214,8 @@ bar {
         status_command i3status --config ~/.config/i3/i3status.conf
 }
 
+bindsym $mod+Shift+p exec "~/.screenlayout/portable-setup.sh"
+bindsym $mod+Shift+Control+p exec "~/.screenlayout/home-setup.sh"
 
 bindsym --release $mod+Escape exec "slock"
 
