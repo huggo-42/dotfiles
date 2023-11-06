@@ -1,0 +1,17 @@
+session: backend
+
+root: ~/Documents/work/...
+
+windows:
+  - name: vim
+    layout: main-horizontal
+    commands:
+      - vim
+  - name: server
+    layout: main-horizontal
+    commands:
+      - php7.4 artisan serve
+  - name: ngrok
+    layout: main-horizontal
+    commands:
+      - ngrok http 8000
