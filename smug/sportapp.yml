@@ -1,12 +1,6 @@
-session: esporte_parana
+session: sportapp
 
-root: ~/Documents/work/parana-esporte/parana
-
-before_start:
-  - echo "echo before start"
-
-stop:
-  - echo "echo stop"
+root: /home/shoka/Documents/work/sportapp2/
 
 windows:
   - name: code

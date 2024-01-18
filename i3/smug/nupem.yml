@@ -1,12 +1,6 @@
-session: esporte_parana
+session: nupem
 
-root: ~/Documents/work/parana-esporte/parana
-
-before_start:
-  - echo "echo before start"
-
-stop:
-  - echo "echo stop"
+root: /home/shoka/Documents/repos/nupem-org/app-nupem/nupem
 
 windows:
   - name: code
@@ -21,4 +15,4 @@ windows:
     layout: main-horizontal
     commands:
       - sleep 10
-      - fvm flutter run
+      - flutter run

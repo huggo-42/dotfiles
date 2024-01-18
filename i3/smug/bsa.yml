@@ -1,6 +1,6 @@
-session: backend_esporte_parana
+session: backend_sportapp
 
-root: ~/Documents/work/parana-esporte/backend-parana
+root: ~/Documents/work/ingasportapp/
 
 windows:
   - name: code
