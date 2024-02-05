@@ -82,4 +82,10 @@ return require('packer').startup(function(use)
     use("laytan/cloak.nvim")
 
     use("zbirenbaum/copilot.lua")
+
+    use {
+      "unisonweb/unison",
+      branch = "trunk",
+      rtp = "/editor-support/vim"
+    }
 end)
