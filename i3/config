@@ -47,8 +47,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Shift+Return exec alacritty
-# bindsym $mod+Return exec ~/Software/st-0.8.2/st
+# bindsym $mod+Shift+Return exec ~/Software/st-0.8.2/st -> have to build again
 bindsym $mod+Return exec ~/Software/WezTerm.AppImage
 
 # kill focused window
@@ -217,6 +216,7 @@ bar {
         # hidden_state hide
         position bottom
         status_command i3status --config ~/.config/i3/i3status.conf
+        # status_command ~/.config/i3/i3bar_wrapper.sh
 }
 
 bindsym $mod+Shift+p exec "~/.screenlayout/portable-setup.sh"
@@ -230,3 +230,7 @@ bindsym $mod+Shift+n exec "pcmanfm"
 bindsym $mod+Shift+Print exec "flameshot gui"
 
 bindsym $mod+Shift+t exec "~/Software/binc"
+
+# scratchpad move/show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show

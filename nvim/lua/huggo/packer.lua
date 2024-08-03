@@ -88,4 +88,13 @@ return require('packer').startup(function(use)
       branch = "trunk",
       rtp = "/editor-support/vim"
     }
+
+    use ("NvChad/nvim-colorizer.lua")
+    -- use {
+    --     'norcalli/nvim-colorizer.lua',
+    --     config = function()
+    --         require('colorizer').setup()
+    --     end
+    -- }
+
 end)

@@ -37,3 +37,5 @@ vim.opt.cursorline = true
 vim.cmd("command! LazyGit :terminal lazygit")
 vim.api.nvim_set_keymap("n", "<leader>gg", ":LazyGit<CR>", { noremap = true, silent = true })
 
+vim.opt.ignorecase = true
+vim.opt.wrap = true
