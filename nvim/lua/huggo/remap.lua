@@ -47,3 +47,6 @@ vim.api.nvim_set_keymap('n', '<leader>ep', '<cmd>lua vim.diagnostic.goto_prev()<
 vim.api.nvim_set_keymap('n', '<leader>en', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>et', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ee', '<cmd>lua vim.diagnostic.setloclist()<CR>', { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>h", "<cmd>:sp<CR>");
+vim.keymap.set("n", "<leader>v", "<cmd>:vsp<CR>");

@@ -30,7 +30,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -47,8 +47,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
+# bindsym $mod+Return exec gnome-terminal
 # bindsym $mod+Shift+Return exec ~/Software/st-0.8.2/st -> have to build again
-bindsym $mod+Return exec ~/Software/WezTerm.AppImage
+bindsym $mod+Return exec ~/Software/wezterm.AppImage
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -234,3 +235,6 @@ bindsym $mod+Shift+t exec "~/Software/binc"
 # scratchpad move/show
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+
+bindsym $mod+Shift+z exec --no-startup-id ~/personal/boomer/boomer
+

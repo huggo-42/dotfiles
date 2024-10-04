@@ -39,3 +39,12 @@ vim.api.nvim_set_keymap("n", "<leader>gg", ":LazyGit<CR>", { noremap = true, sil
 
 vim.opt.ignorecase = true
 vim.opt.wrap = true
+vim.opt.autoindent = true
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "php",
+    callback = function()
+        vim.opt.autoindent = true
+        vim.opt.smartindent = true
+    end,
+})

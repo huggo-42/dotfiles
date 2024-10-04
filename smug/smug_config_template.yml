@@ -1,0 +1,9 @@
+session: tmux_session_name
+
+root: /root_path
+
+windows:
+  - name: panel_name
+    layout: main-horizontal
+    commands:
+      - vim
