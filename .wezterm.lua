@@ -25,17 +25,36 @@ config.colors.cursor_fg = 'black'
 
 local dimmer = { brightness = 0.1 }
 
--- local file_path = '/home/...'
+-- local file_path = '/home/nihil/personal/anime/crown-blackhole.png'
+-- local file_path = '/home/nihil/personal/anime/cyber_girl.jpg'
+-- local file_path = '/home/nihil/personal/anime/dead_eyes.jpg'
+-- local file_path = '/home/nihil/personal/anime/girl-with-gu.png'
+-- local file_path = '/home/nihil/personal/anime/moon-upside.jpg'
+-- local file_path = '/home/nihil/personal/anime/green-brown-yellow.jpg'
+-- local file_path = '/home/nihil/personal/anime/rose-pine-sword.jpg'
+-- local file_path = '/home/nihil/personal/anime/zelda-white.bmp'
+-- local file_path = '/home/nihil/personal/anime/blue_lookback.png'
+-- local file_path = '/home/nihil/Pictures/the_black_hole.png'
+-- local file_path = '/home/nihil/personal/anime/blue-chains.png'
+local file_path = ''
+local file_path = '/home/nihil/personal/anime/white-red-green.jpg'
 
--- config.background = {
---   {
---     source = {
---       File = file_path,
---     },
---     repeat_x = 'Mirror',
---     hsb = dimmer,
---   },
--- }
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+
+config.background = {
+  {
+    source = {
+      File = file_path,
+    },
+    repeat_x = 'Mirror',
+    hsb = dimmer,
+  },
+}
 
 config.keys = {
   {
