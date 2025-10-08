@@ -12,13 +12,14 @@ if exists("syntax_on")
 endif
 let g:colors_name = "oggu"
 hi Normal          guifg=#e4e4ef      guibg=#181818
+"hi Normal          guifg=#e4e4ef      guibg=#1c1c1c
 hi Comment         guifg=#cc8c3c
 " #9e95c7 | #cc8c3c
 hi Constant        guifg=#95a99f
 hi String          guifg=#73c936
 hi Identifier      guifg=#e4e4ef
 hi Keyword         guifg=#ffdd33      gui=bold
-hi Function        guifg=cyan
+hi Function        guifg=#BCD4E6
 hi Type            guifg=#95a99f
 hi Error           guifg=#f43841
 hi Todo            guifg=#e4e4ef      guibg=#ffdd33
