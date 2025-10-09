@@ -1,12 +1,12 @@
 # tmux like config, but different keybind because using inside tmux, so... useless, but cool functionalities
 # keybind = ctrl+b>h=new_split:down
 # keybind = ctrl+b>v=new_split:right
-#
+
 # keybind = alt+h=goto_split:left
 # keybind = alt+j=goto_split:bottom
 # keybind = alt+k=goto_split:top
 # keybind = alt+l=goto_split:right
-#
+
 # keybind = alt+shift+h=resize_split:left,10
 # keybind = alt+shift+j=resize_split:down,10
 # keybind = alt+shift+k=resize_split:up,10

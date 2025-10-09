@@ -104,36 +104,115 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.zsh_profile
 
-
-SAVEHIST=1000  # Save most-recent 1000 lines
+SAVEHIST=1000 # Save most-recent 1000 lines
 HISTFILE=~/.zsh_history
 
 alias studio="~/Software/android-studio/bin/studio.sh"
 
-export PATH="/home/nihil/Software/flutter/bin:$PATH"
+alias flutter="/home/huggo/Software/flutter" # it's a symbolic link
 
-alias suicide="pkill -u nihil"
+alias suicide="pkill -u huggo"
 
-alias vim="nvim ."
-
-alias emulator_start="/home/nihil/Android/Sdk/emulator/emulator @Medium_Phone_API_35"
-
-alias battery_info="upower -i $(upower -e | grep BAT) | grep --color=never -E 'state|to\ full|to\ empty|percentage'"
-alias battery_rules="echo 'Charges until' $(sed -n 's/.*echo \([0-9]\+\) >.*/\1/p' /etc/udev/rules.d/r_battery.rules)"
-alias battery_rules_reload="/home/nihil/scripts/reload_battery_rules.sh"
+alias emulator_start_1Pixel4API36="/home/huggo/Android/Sdk/emulator/emulator @1Pixel4API36"
+alias emulator_start_2Pixel4API36="/home/huggo/Android/Sdk/emulator/emulator @2Pixel4API36"
 
 alias zen="~/Software/zen.AppImage &"
 
 export PATH="/usr/local/go/bin:$PATH"
 
-JAVA_HOME="/usr/lib/jvm/java-19-openjdk-amd64"
+JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
 export JAVA_HOME
 export PATH="$PATH:$JAVA_HOME/bin"
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.nimble/bin"
+export PATH="$PATH":"$HOME/go/bin"
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-alias mac="rdesktop -d http://la726.macincloud.com/ -u user247705 -p pje30774hjd 74.80.242.126:6000"
+
+export GPG_TTY=$(tty)
+
+alias wutter="timer 1m && terminal-notifier -message 'Wutter'\
+  -title 'Drink water! Stay hard :D'\
+  -appIcon '~/Pictures/pomo.png'\
+  -sound crystal"
+
+alias work="timer 1m && terminal-notifier -message 'Pomodoro'\
+  -title 'Break is over! Get back to work :D'\
+  -appIcon '~/Pictures/pomo.png'\
+  -sound crystal"
+
+alias rest="timer 1m && terminal-notifier -message 'Pomodoro'\
+  -title 'Break is over! Get back to work :D'\
+  -appIcon '~/Pictures/pomo.png'\
+  -sound crystal"
+
+declare -A pomo_options
+pomo_options["work"]="50"
+pomo_options["rest"]="10"
+pomo_options["wutter"]="15"
+
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val | lolcat 2>/dev/null
+  timer ${pomo_options["$val"]}m
+  spd-say "'$val' session done"
+  fi
+}
+
+alias pomo_work="pomodoro 'work'"
+alias pomo_rest="pomodoro 'rest'"
+alias pomo_water="pomodoro 'water'"
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/huggo/.opam/opam-init/init.zsh' ]] || source '/home/huggo/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
+# bun completions
+[ -s "/home/huggo/.bun/_bun" ] && source "/home/huggo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/Software/zig-x86_64-linux-0.14.1:$PATH"
+
+# bind -x '"\C-x\C-e": edit_and_execute'
+function edit_and_execute() {
+  fc -e vim
+}
+
+bindkey '^X^E' edit_and_execute
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/bin/jq:$PATH"
+
+alias vim="nvim ."
+
+alias ls=exa
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - bash)"
+
+eval "$(zoxide init zsh)"
+
+export TERM='xterm-256color'
+
+alias fzmux="tmux-sessionizer"
+
+alias caps_as_esc_on="setxkbmap -option caps:escape"
+alias caps_as_esc_off="setxkbmap -option"
+
+alias background_image_and_picom="feh --bg-scale ./restaurant_end_of_universe1500x500.jpeg & picom"
+
+alias set_bg="~/scripts/set_bg.sh"
