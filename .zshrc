@@ -104,23 +104,28 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.zsh_profile
 
-SAVEHIST=1000 # Save most-recent 1000 lines
+
+SAVEHIST=1000  # Save most-recent 1000 lines
 HISTFILE=~/.zsh_history
 
-alias studio="~/Software/android-studio/bin/studio.sh"
+# deleted for disk space
+# alias studio="~/Software/android-studio/bin/studio.sh"
 
-alias flutter="/home/huggo/Software/flutter" # it's a symbolic link
+# export PATH="/home/huggo/Software/flutter/bin:$PATH"
+# export PATH="/home/huggo/Software/flutter:$PATH"
+alias flutter="/home/huggo/Software/flutter"
 
 alias suicide="pkill -u huggo"
 
-alias emulator_start_1Pixel4API36="/home/huggo/Android/Sdk/emulator/emulator @1Pixel4API36"
-alias emulator_start_2Pixel4API36="/home/huggo/Android/Sdk/emulator/emulator @2Pixel4API36"
+alias emulator_start_Medium_Phone_API_361="/home/huggo/Android/Sdk/emulator/emulator @Medium_Phone_API_36.1 -avd Medium_Phone_API_36.1 -gpu off -no-snapshot -netdelay none -netspeed full"
 
-alias zen="~/Software/zen.AppImage &"
+alias zen="echo todo"
 
 export PATH="/usr/local/go/bin:$PATH"
 
+# JAVA_HOME="/usr/lib/jvm/java-19-openjdk-amd64"
 JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+# JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 export JAVA_HOME
 export PATH="$PATH:$JAVA_HOME/bin"
 
@@ -129,8 +134,8 @@ export PATH="$PATH":"$HOME/.nimble/bin"
 export PATH="$PATH":"$HOME/go/bin"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 export GPG_TTY=$(tty)
@@ -138,6 +143,11 @@ export GPG_TTY=$(tty)
 alias wutter="timer 1m && terminal-notifier -message 'Wutter'\
   -title 'Drink water! Stay hard :D'\
   -appIcon '~/Pictures/pomo.png'\
+  -sound crystal"
+
+alias exercise="timer 1m && terminal-notifier -message 'Exercise'\
+  -title 'Exercise to not atrophiate'\
+  -appIcon '~/Downloads/gopher.png'\
   -sound crystal"
 
 alias work="timer 1m && terminal-notifier -message 'Pomodoro'\
@@ -150,10 +160,14 @@ alias rest="timer 1m && terminal-notifier -message 'Pomodoro'\
   -appIcon '~/Pictures/pomo.png'\
   -sound crystal"
 
+# study stream aliases
+# Requires https://github.com/caarlos0/timer to be installed. spd-say should ship with your distro
+
 declare -A pomo_options
 pomo_options["work"]="50"
 pomo_options["rest"]="10"
 pomo_options["wutter"]="15"
+pomo_options["exercise"]="30"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
@@ -166,7 +180,11 @@ pomodoro () {
 
 alias pomo_work="pomodoro 'work'"
 alias pomo_rest="pomodoro 'rest'"
-alias pomo_water="pomodoro 'water'"
+alias pomo_water="pomodoro 'wutter'"
+alias pomo_exercise="pomodoro 'exercise'"
+
+alias mac="rdesktop -d http://la726.macincloud.com/ -u user247705 -p pje30774hjd 74.80.242.126:6000"
+alias macincloud="rdesktop -d http://LA726.macincloud.com/ -u user247705 -p pje30774hjd LA726.macincloud.com:6000"
 
 
 # BEGIN opam configuration
@@ -184,6 +202,8 @@ alias pomo_water="pomodoro 'water'"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/Software/zig-x86_64-linux-0.14.1:$PATH"
+export EDITOR=vim
+export editor=vim
 
 # bind -x '"\C-x\C-e": edit_and_execute'
 function edit_and_execute() {
@@ -197,22 +217,26 @@ export PATH="/usr/bin/jq:$PATH"
 
 alias vim="nvim ."
 
-alias ls=exa
-
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - bash)"
 
 eval "$(zoxide init zsh)"
 
 export TERM='xterm-256color'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 alias fzmux="tmux-sessionizer"
 
 alias caps_as_esc_on="setxkbmap -option caps:escape"
 alias caps_as_esc_off="setxkbmap -option"
 
-alias background_image_and_picom="feh --bg-scale ./restaurant_end_of_universe1500x500.jpeg & picom"
-
 alias set_bg="~/scripts/set_bg.sh"
+
+export PATH=/home/huggo/.opencode/bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias bt_edifier="bluetoothctl connect 08:F0:B6:CE:F7:6C"
+alias bt_keychron="bluetoothctl connect 6C:93:08:67:D6:D6"
+
+alias ngrok_source="ngrok http 80 --host-header=dev.bemestar.ingadigital"
