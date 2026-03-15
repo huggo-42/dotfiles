@@ -23,11 +23,13 @@ hi Function        guifg=#BCD4E6
 hi Type            guifg=#95a99f
 hi Error           guifg=#f43841
 hi Todo            guifg=#e4e4ef      guibg=#ffdd33
-hi LineNr          guifg=#453d41
+"hi LineNr          guifg=#453d41 " for normal background
+hi LineNr          guifg=grey     " for transparent background
 hi CursorLineNr    guifg=#ffdd33
 hi Visual          guibg=#282828
 hi StatusLine      guifg=#e4e4ef      guibg=#181818
-hi CursorLine      guibg=NONE         guifg=NONE
+"hi CursorLine      guibg=NONE         guifg=NONE
+hi CursorLine      guibg=#424242         guifg=NONE
 hi CursorColumn    guifg=NONE         guibg=NONE
 hi Visual          guibg=#44475a      guifg=NONE
 " hi Cursor          guifg=#ffdd33      guibg=#44475a ctermfg=1 ctermbg=2

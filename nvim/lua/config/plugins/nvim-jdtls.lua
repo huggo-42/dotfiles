@@ -1,0 +1,112 @@
+return {}
+-- return {
+--   "mfussenegger/nvim-jdtls",
+--   ft = { "java" },
+--   dependencies = {
+--     { "mfussenegger/nvim-dap" },
+--     { "rcarriga/nvim-dap-ui" },
+--   },
+--   config = function()
+--     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+--     local workspace_dir = "~/.cache/jdtls/workspace/" .. project_name
+--     -- local bundles = {
+--     -- 	vim.fn.glob(
+--     -- 		"~/.local/share/nvim/mason/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+--     -- 	),
+--     -- }
+--     local extendedClientCapabilities = require("jdtls").extendedClientCapabilities
+--     extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+--     -- vim.list_extend(
+--     -- 	bundles,
+--     -- 	vim.split(
+--     -- 		vim.fn.glob("~/.local/share/nvim/mason/packages/java-test/extension/server/*.jar", true),
+--     -- 		"\n"
+--     -- 	)
+--     -- )
+--     local config = {
+--       cmd = {
+--         "java",
+--
+--         "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+--         "-Dosgi.bundles.defaultStartLevel=4",
+--         "-Declipse.product=org.eclipse.jdt.ls.core.product",
+--         "-Dlog.protocol=true",
+--         "-Dlog.level=ALL",
+--         "-noverify",
+--         "-Xmx1g",
+--         "--add-modules=ALL-SYSTEM",
+--         "--add-opens",
+--         "java.base/java.util=ALL-UNNAMED",
+--         "--add-opens",
+--         "java.base/java.lang=ALL-UNNAMED",
+--
+--         -- 💀
+--         "-jar",
+--         "/home/huggo/.local/share/jdtls/plugins/org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar",
+--
+--         -- 💀
+--         "-configuration",
+--         "/home/huggo/.local/share/jdtls/config_linux",
+--         -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
+--         -- Must point to the                      Change to one of `linux`, `win` or `mac`
+--
+--         -- 💀
+--         "-data",
+--         workspace_dir,
+--       },
+--
+--       -- root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
+--       root_dir = vim.fs.root(0, { 'gradlew', '.git', 'mvnw' }),
+--
+--       on_attach = function(client, bufnr)
+--         require("jdtls").setup_dap({ hotcodereplace = "auto" })
+--         require("jdtls.dap").setup_dap_main_class_configs()
+--         require("jdtls.setup").add_commands()
+--       end,
+--
+--       settings = {
+--         java = {
+--           eclipse = {
+--             downloadSources = true,
+--           },
+--           contentProvider = { preferred = "fernflower" },
+--         },
+--       },
+--
+--       -- java-debug/vscode-java-test
+--       -- init_options = {
+--       --   bundles = {
+--       --     vim.split(
+--       --       -- vim.fn.glob("~/.local/share/nvim/mason/packages/java-test/extension/server/*.jar"),
+--       --       vim.fn.glob("/home/huggo/Software/vscode-java-test "),
+--       --       "\n"
+--       --     ),
+--       --     extendedClientCapabilities = extendedClientCapabilities,
+--       --   },
+--       -- },
+--     }
+--     -- table.insert(
+--     --   config.init_options.bundles,
+--     --   vim.fn.glob(
+--     --     data .. "/mason/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+--     --   )
+--     -- )
+--     require("jdtls").start_or_attach(config)
+--
+--     local dap = require("dap")
+--     dap.configurations.java = {
+--       {
+--         javaExec = "java",
+--         request = "launch",
+--         type = "java",
+--       },
+--       {
+--         type = "java",
+--         request = "attach",
+--         name = "Debug (Attach) - Remote",
+--         hostName = "127.0.0.1",
+--         port = 5005,
+--       },
+--     }
+--   end,
+-- }

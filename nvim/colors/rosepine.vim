@@ -144,6 +144,7 @@ hi SpecialComment guifg=#c4a7e7 guibg=NONE gui=NONE cterm=NONE
 hi Statement guifg=#31748f guibg=NONE gui=NONE cterm=NONE
 hi StorageClass guifg=#9ccfd8 guibg=NONE gui=NONE cterm=NONE
 hi String guifg=#f6c177 guibg=NONE gui=NONE cterm=NONE
+"hi String guifg=#73c936 guibg=NONE gui=NONE cterm=NONE
 hi Structure guifg=#9ccfd8 guibg=NONE gui=NONE cterm=NONE
 hi Tag guifg=#ebbcba guibg=NONE gui=NONE cterm=NONE
 hi Todo guifg=#c4a7e7 guibg=NONE gui=NONE cterm=NONE

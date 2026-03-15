@@ -9,6 +9,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
+  pattern = "dart",
+  callback = function()
+    set.colorcolumn = "120"
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    set.colorcolumn = "120"
+    set.tabstop = 4
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
   pattern = "php",
   callback = function()
     set.autoindent = true
@@ -17,12 +32,12 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "dart",
+  pattern = "go",
   callback = function()
     -- vim.opt_local.commentstring = "// %s"
-    vim.opt_local.tabstop = 2
-    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
     vim.opt_local.expandtab = true
-    set.colorcolumn = "120"
+    -- set.colorcolumn = "120"
   end,
 })

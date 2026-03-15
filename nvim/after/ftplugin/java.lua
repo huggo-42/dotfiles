@@ -1,0 +1,70 @@
+-- local jdtls_ok, jdtls = pcall(require, "jdtls")
+-- print(jdtls_ok)
+-- print(jdtls)
+--
+-- local JDTLS_LOCATION = os.getenv("HOME")
+--
+-- local HOME = os.getenv("HOME")
+-- local WORKSPACE_PATH = HOME .. "/workspace/java/"
+--
+-- local SYSTEM = "linux"
+-- if vim.fn.has("mac") == 1 then
+-- 	SYSTEM = "mac"
+-- end
+--
+-- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+-- local workspace_dir = WORKSPACE_PATH .. project_name
+--
+-- local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle", "build.gradle.kts" }
+-- local root_dir = require("jdtls.setup").find_root(root_markers)
+-- if root_dir == "" then
+-- 	return
+-- end
+--
+-- local extendedClientCapabilities = jdtls.extendedClientCapabilities
+-- extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+--
+-- local config = {
+-- 	capabilities = capabilities,
+-- 	root_dir = root_dir,
+-- 	settings = {
+-- 		java = {
+-- 			eclipse = {
+-- 				downloadSources = true,
+-- 			},
+-- 			configuration = {
+-- 				updateBuildConfiguration = "interactive",
+-- 			},
+-- 			gradle = {
+-- 				enabled = true,
+-- 			},
+-- 			maven = {
+-- 				downloadSources = true,
+-- 			},
+-- 			implementationsCodeLens = {
+-- 				enabled = true,
+-- 			},
+-- 			referencesCodeLens = {
+-- 				enabled = true,
+-- 			},
+-- 			references = {
+-- 				includeDecompiledSources = true,
+-- 			},
+-- 		},
+-- 		signatureHelp = { enabled = true },
+-- 		extendedClientCapabilities = extendedClientCapabilities,
+-- 		sources = {
+-- 			organizeImports = {
+-- 				starThreshold = 9999,
+-- 				staticStarThreshold = 9999,
+-- 			},
+-- 		},
+-- 	},
+-- 	flags = {
+-- 		allow_incremental_sync = true,
+-- 	},
+-- 	init_options = {
+-- 		bundles = {},
+-- 	},
+-- }
+-- jdtls.start_or_attach(config)

@@ -6,14 +6,14 @@ vim.lsp.enable('jsonls')
 vim.lsp.enable('php')
 vim.lsp.enable('clangd')
 vim.lsp.enable('go')
-vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('jdtls')
 
 vim.keymap.set("n", "<leader>ff", function() vim.lsp.buf.format() end)
 
 vim.diagnostic.enable = true
-if false then
-  vim.diagnostic.config({ virtual_lines = true })
-end
+vim.diagnostic.config({
+  virtual_text = true -- use virtual_lines to show diagnostic in a new line
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
@@ -21,13 +21,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if not client then return end
 
-    if client:supports_method('textDocument/formatting') then
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        buffer = args.buf,
-        callback = function()
-          vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-        end
-      })
-    end
+    -- if client:supports_method('textDocument/formatting') then
+    --   vim.api.nvim_create_autocmd('BufWritePre', {
+    --     buffer = args.buf,
+    --     callback = function()
+    --       vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+    --     end
+    --   })
+    -- end
   end,
 })
