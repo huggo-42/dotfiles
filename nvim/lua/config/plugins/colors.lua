@@ -12,8 +12,8 @@ return {
     config = function()
       vim.cmd.colorscheme('gruvbox')
       -- vim.cmd.colorscheme('naysayer')
-      -- vim.cmd.colorscheme('rosepine')
-      vim.cmd.colorscheme('oggu')
+      vim.cmd.colorscheme('rosepine')
+      -- vim.cmd.colorscheme('oggu')
       -- vim.opt.background = 'light'
       -- vim.api.nvim_set_hl(0, "Normal", { bg = "#181818" })
       -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

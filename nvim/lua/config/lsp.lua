@@ -1,12 +1,13 @@
-vim.lsp.enable('lua')
-vim.lsp.enable('dartls')
-vim.lsp.enable('htmlls')
-vim.lsp.enable('tsserver')
-vim.lsp.enable('jsonls')
-vim.lsp.enable('php')
 vim.lsp.enable('clangd')
+vim.lsp.enable('dartls')
 vim.lsp.enable('go')
+vim.lsp.enable('htmlls')
 vim.lsp.enable('jdtls')
+vim.lsp.enable('jsonls')
+vim.lsp.enable('lua')
+vim.lsp.enable('php')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('ts_ls')
 
 vim.keymap.set("n", "<leader>ff", function() vim.lsp.buf.format() end)
 
@@ -21,6 +22,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if not client then return end
 
+    -- just an example
     -- if client:supports_method('textDocument/formatting') then
     --   vim.api.nvim_create_autocmd('BufWritePre', {
     --     buffer = args.buf,

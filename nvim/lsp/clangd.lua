@@ -1,6 +1,6 @@
 return {
   name = 'clangd',
-  cmd = { 'clangd-15' },
+  cmd = { 'clangd-18' },
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
   root_markers = { '.clangd', '.clang-tidy', '.clang-format', 'compile_commands.json', 'compile_flags.txt', 'configure.ac', '.git' },
   init_options = {

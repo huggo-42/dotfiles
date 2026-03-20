@@ -84,8 +84,8 @@ hi ColorColumn guifg=NONE guibg=#26233a gui=NONE cterm=NONE
 hi Conceal guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi CursorColumn guifg=NONE guibg=#21202e gui=NONE cterm=NONE
 " Changed here
-"hi CursorLine guifg=NONE guibg=#21202e gui=NONE cterm=NONE
-hi CursorLine guifg=NONE guibg=#252525 gui=NONE cterm=NONE
+hi CursorLine guifg=NONE guibg=#21202e gui=NONE cterm=NONE
+"hi CursorLine guifg=NONE guibg=#252525 gui=NONE cterm=NONE
 hi CursorLineNr guifg=#e0def4 guibg=NONE gui=NONE cterm=NONE
 hi DiffAdd guifg=NONE guibg=#333c48 gui=NONE cterm=NONE
 hi DiffChange guifg=NONE guibg=#26233a gui=NONE cterm=NONE
